@@ -20,11 +20,11 @@ main {
   box-shadow: 0 0 10px darken($grey, 20%);
   box-sizing: border-box;
 
-  @media screen and (min-width: $tablet-width) {
+  @media screen and (min-width: $tablet) {
     margin: 20px;
   }
 
-  @media screen and (min-width: $desktop-width) {
+  @media screen and (min-width: $desktop) {
     margin: 20px auto;
   }
 }

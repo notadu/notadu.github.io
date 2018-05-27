@@ -3,9 +3,12 @@ section {
   margin-left: 50px;
   margin-bottom: 20px;
 
-  @media screen and (min-width: $tablet-width) {
-    margin-left: 150px;
+  @media screen and (min-width: $tablet) {
     margin-right: 300px;
+  }
+
+  @media screen and (min-width: $laptop) {
+    margin-left: 150px;
   }
 
   &:after {
@@ -22,7 +25,7 @@ section {
   &.personal-info,
   &.skills {
 
-    @media screen and (min-width: $tablet-width) {
+    @media screen and (min-width: $tablet) {
       margin: 0;
       position: absolute;
       top: 0;
@@ -47,7 +50,7 @@ section {
   }
 
   &.skills {
-    @media screen and (min-width: $tablet-width) {
+    @media screen and (min-width: $tablet) {
       top: 350px;
     }
   }
@@ -104,7 +107,7 @@ section {
   }
 
   .date {
-    @media screen and (min-width: $tablet-width) {
+    @media screen and (min-width: $laptop) {
       position: absolute;
       top: 5px;
       left: -150px;
