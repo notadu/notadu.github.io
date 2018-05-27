@@ -1,0 +1,30 @@
+html {
+  font-style: 16px;
+}
+
+body {
+  background-color: $grey;
+  color: $dark-grey;
+  font-family: "Lato", sans-serif;
+}
+
+main {
+  position: relative;
+}
+
+.cv {
+  min-width: 300px;
+  max-width: 1200px;
+  padding: 20px;
+  background-color: $white;
+  box-shadow: 0 0 10px darken($grey, 20%);
+  box-sizing: border-box;
+
+  @media screen and (min-width: $tablet-width) {
+    margin: 20px;
+  }
+
+  @media screen and (min-width: $desktop-width) {
+    margin: 20px auto;
+  }
+}

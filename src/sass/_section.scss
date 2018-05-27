@@ -1,0 +1,140 @@
+section {
+  position: relative;
+  margin-left: 50px;
+  margin-bottom: 20px;
+
+  @media screen and (min-width: $tablet-width) {
+    margin-left: 150px;
+    margin-right: 300px;
+  }
+
+  &:after {
+    content: '';
+    width: 1px;
+    height: 100%;
+    background-color: $grey;
+    position: absolute;
+    left: -30px;
+    top: 25px;
+    z-index: 1;
+  }
+
+  &.personal-info,
+  &.skills {
+
+    @media screen and (min-width: $tablet-width) {
+      margin: 0;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 260px;
+
+      &:after {
+        content: none;
+      }
+
+      .title {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        .fas {
+          position: static;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  &.skills {
+    @media screen and (min-width: $tablet-width) {
+      top: 350px;
+    }
+  }
+}
+
+.title {
+  margin-bottom: 20px;
+
+  h2 {
+    line-height: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .fas {
+    position: absolute;
+    left: -55px;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: $dark-grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+
+    &:before {
+      color: $white;
+    }
+  }
+}
+
+.content {
+
+  .item {
+    margin-bottom: 10px;
+
+    &.dot {
+      position: relative;
+
+      &:after {
+        position: absolute;
+        top: 12px;
+        left: -35px;
+        content: '';
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: $dark-grey;
+        z-index: 2;
+      }
+    }
+  }
+
+  .date {
+    @media screen and (min-width: $tablet-width) {
+      position: absolute;
+      top: 5px;
+      left: -150px;
+      width: 100px;
+      text-align: right;
+    }
+  }
+
+  .project {
+    margin-bottom: 20px;
+  }
+
+  p, li {
+    line-height: 1.5rem;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    color: $black;
+
+    b {
+      font-weight: bold;
+    }
+  }
+
+  ul {
+    list-style: inside;
+  }
+
+  h3 {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 2rem;
+  }
+}
