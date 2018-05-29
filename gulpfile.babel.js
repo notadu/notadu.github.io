@@ -6,9 +6,10 @@ import mqpacker from 'css-mqpacker';
 import inject from 'gulp-inject';
 import clean from 'gulp-clean';
 import server from 'browser-sync';
+import runSequence from 'run-sequence';
 
 const env = process.env.NODE_ENV || 'development';
-const outputDir = `./builds/${env}/css`;
+const outputDir = `./builds/${env}`;
 
 gulp.task('clean', () => {
   gulp.src(outputDir, {
@@ -17,7 +18,7 @@ gulp.task('clean', () => {
     .pipe(clean());
 });
 
-gulp.task('sass', () => {
+gulp.task('sass', () => (
   gulp.src('./src/sass/**/*.scss')
     .pipe(sass({
       outputStyle: env === 'production' ? 'compressed' : 'expanded',
@@ -28,13 +29,13 @@ gulp.task('sass', () => {
         sort: true,
       })
     ]))
-    .pipe(gulp.dest(outputDir))
-    .pipe(server.stream());
-});
+    .pipe(gulp.dest(`${outputDir}/css`))
+    .pipe(server.stream())
+));
 
 gulp.task('inject', () => {
   const target = gulp.src('./index.html');
-  const sources = gulp.src([`${outputDir}/style.css`], {
+  const sources = gulp.src([`${outputDir}/css/style.css`], {
     read: false
   });
 
@@ -42,7 +43,12 @@ gulp.task('inject', () => {
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('serve', ['sass'], () => {
+gulp.task('images', () => (
+  gulp.src('img/**/*.png')
+    .pipe(gulp.dest(`${outputDir}/img`))
+));
+
+gulp.task('serve', () => {
   server.init([], {
     server: '.',
   });
@@ -52,4 +58,11 @@ gulp.task('serve', ['sass'], () => {
 });
 
 // Default task
-gulp.task('default', ['clean', 'sass', 'inject']);
+gulp.task('default', () => {
+  runSequence(
+    'clean',
+    'sass',
+    'images',
+    'inject'
+  );
+});
