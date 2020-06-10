@@ -1,0 +1,76 @@
+@import "mixins";
+@import "sections/name";
+@import "sections/jobTitle";
+@import "sections/experience";
+
+.cv-section_title {
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+}
+
+.cv-section {
+  margin-bottom: var(--gap);
+
+  &__personal-info,
+  &__about,
+  &__experience,
+  &__education,
+  &__skills {
+    padding-left: var(--background-width);
+  }
+}
+
+.employment-history_period {
+  font-style: italic;
+}
+
+/*--------------------------------------------------------------
+CSS Grid layout for wider screens, when browser supports grid:
+--------------------------------------------------------------*/
+
+@supports (display: grid) {
+
+  @include screen__small {
+    .cv-section {
+      margin-bottom: 0;
+
+      &__personal-info,
+      &__about,
+      &__experience,
+      &__education,
+      &__skills {
+        padding-left: 0;
+      }
+
+
+      &__name {
+        grid-area: name;
+      }
+
+      &__job-title {
+        grid-area: job-title;
+      }
+
+      &__personal-info {
+        grid-area: personal-info;
+      }
+
+      &__about {
+        grid-area: about;
+      }
+
+      &__education {
+        grid-area: education;
+      }
+
+      &__experience {
+        grid-area: experience;
+      }
+
+      &__skills {
+        grid-area: skills;
+      }
+    }
+  }
+}
+

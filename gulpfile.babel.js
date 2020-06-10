@@ -1,68 +1,65 @@
-import gulp from'gulp';
-import sass from 'gulp-sass';
-import postcss from 'gulp-postcss';
-import autoprefixer from 'autoprefixer';
-import mqpacker from 'css-mqpacker';
-import inject from 'gulp-inject';
-import clean from 'gulp-clean';
-import server from 'browser-sync';
-import runSequence from 'run-sequence';
+import browserSync from "browser-sync";
+import clean from "gulp-clean";
+import {series, src, dest, watch} from "gulp";
+import postcss from "gulp-postcss";
+import inject from "gulp-inject";
+import autoprefixer from "autoprefixer";
+import cssnano from "cssnano";
+import cssvariables from "postcss-css-variables";
+import sass from "gulp-sass";
 
 const env = process.env.NODE_ENV || 'development';
 const outputDir = `./builds/${env}`;
 
-gulp.task('clean', () => {
-  gulp.src(outputDir, {
-    read: false
-  })
-    .pipe(clean());
-});
+// Clean assets
+export function cleanOutput() {
+    return src(outputDir, {read: false, allowEmpty: true})
+        .pipe(clean());
+}
 
-gulp.task('sass', () => (
-  gulp.src('./src/sass/**/*.scss')
-    .pipe(sass({
-      outputStyle: env === 'production' ? 'compressed' : 'expanded',
-    }).on('error', sass.logError))
-    .pipe(postcss([
-      autoprefixer(),
-      mqpacker({
-        sort: true,
-      })
-    ]))
-    .pipe(gulp.dest(`${outputDir}/css`))
-    .pipe(server.stream())
-));
+function injectSrc() {
+    const target = src('./index.html');
+    const sources = src([`${outputDir}/css/style.css`], {
+        read: false
+    });
+    return target.pipe(inject(sources))
+        .pipe(dest('./'));
+}
 
-gulp.task('inject', () => {
-  const target = gulp.src('./index.html');
-  const sources = gulp.src([`${outputDir}/css/style.css`], {
-    read: false
-  });
+// CSS task
+function scss() {
+  return src('./src/scss/**/*.scss')
+      .pipe(sass({
+          outputStyle: env === 'production' ? 'compressed' : 'expanded',
+      }).on('error', sass.logError))
+      .pipe(postcss([cssvariables, autoprefixer, cssnano]))
+      .pipe(dest(`${outputDir}/css/`))
+      .pipe(browserSync.stream());
+}
 
-  return target.pipe(inject(sources))
-    .pipe(gulp.dest('./'));
-});
+// Images task
+function images() {
+  return src('./src/img/**/*')
+      .pipe(dest(`${outputDir}/img`));
+}
 
-gulp.task('images', () => (
-  gulp.src('img/**/*.png')
-    .pipe(gulp.dest(`${outputDir}/img`))
-));
+// fonts task
+function fonts() {
+  return src('./src/fonts/**/*')
+      .pipe(dest(`${outputDir}/fonts`));
+}
 
-gulp.task('serve', () => {
-  server.init([], {
-    server: '.',
-  });
+export function serve() {
+// Static Server + watching scss/img/html files
+    browserSync({
+      server: '.',
+    });
+    watch('./src/scss/**/*.scss', scss);
+    watch('./src/img/**/*', images);
+    watch('./src/fonts/**/*', fonts);
+    watch('*.html').on('change', browserSync.reload);
+}
 
-  gulp.watch('./src/sass/**/*.scss', ['sass']);
-  gulp.watch('*.html').on('change', server.reload);
-});
-
-// Default task
-gulp.task('default', () => {
-  runSequence(
-    'clean',
-    'sass',
-    'images',
-    'inject'
-  );
-});
+// define complex task
+const build = series(cleanOutput, scss, images, fonts, injectSrc);
+export default build;

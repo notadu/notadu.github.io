@@ -1,0 +1,75 @@
+.cv-section__experience {
+  .employment-history_list {
+    padding-left: 40px;
+  }
+
+  .employment-history_item {
+    padding-bottom: 2rem;
+    list-style-type: none;
+    position: relative;
+
+    &:before {
+      content: "";
+      display: block;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background-color: var(--heavy-metal);
+      position: absolute;
+      left: -25px;
+      top: 4px;
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 100%;
+      background-color: var(--heavy-metal);
+      position: absolute;
+      left: -20px;
+      top: 4px;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+
+      &:after {
+        display: none;
+      }
+    }
+
+    h4 {
+      margin-top: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-family: "Roboto", sans-serif;
+    }
+
+
+    h5 {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    h6 {
+      margin: 1rem 0;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+  }
+}
+
+
+@media print {
+  .cv-section__experience {
+    .employment-history_item {
+
+      &:after,
+      &:before {
+        display: none;
+      }
+      list-style-type: initial;
+    }
+  }
+}

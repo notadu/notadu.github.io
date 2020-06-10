@@ -1,0 +1,14 @@
+@import "src/scss/mixins";
+
+.cv-section__job-title {
+  text-transform: uppercase;
+  padding-left: 0;
+
+  h2 {
+    font-size: 1.2rem;
+
+    @include tablet {
+      font-size: 1.5rem;
+    }
+  }
+}

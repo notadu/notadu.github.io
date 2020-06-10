@@ -4,213 +4,328 @@
     <meta charset="UTF-8">
     <title>CV | Natallia Dubrouskaya</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!-- inject:css -->
     <link rel="stylesheet" href="/builds/production/css/style.css">
     <!-- endinject -->
 
     <meta property="og:title" content="CV | Natallia Dubrouskaya">
-    <meta property="og:description" content="Front-End Engineer resume">
+    <meta property="og:description" content="Front-End Engineer CV">
     <meta property="og:image" content="https://notadu.github.io/builds/production/img/CV-preview.png">
 </head>
 <body>
-    <div class="cv">
-        <header>
-            <div class="header-icon">
-                <i class="far fa-circle fa-5x"></i>
+<div class="cv">
+    <main class="cv-content">
+        <section class="cv-section cv-section__name">
+            <h1>Natallia<br/>Dubrouskaya</h1>
+            <div class="photo">
+                <img src="src/img/photo.jpg" alt="Photo of candidate"/>
             </div>
-            <div class="header-info">
-                <h1>Natallia Dubrouskaya</h1>
-                <p>Front-End Developer</p>
+        </section>
+        <section class="cv-section cv-section__job-title">
+            <h2>Front-End Developer</h2>
+        </section>
+        <section class="cv-section cv-section__personal-info">
+            <h3 class="cv-section_title">Personal info</h3>
+            <div class="cv-section_content">
+                <p>
+                    <b>Email:</b>
+                    <a href="mailto:na.dubrouskaya@gmail.com">na.dubrouskaya@gmail.com</a>
+                </p>
+                <p>
+                    <b>Phone:</b>
+                    <a href="tel:+375447660078">+375447660078</a>
+                </p>
+                <p>
+                    <b>Date of birth:</b>
+                    <span>December 3, 1988</span>
+                </p>
+                <p>
+                    <b>LinkedIn:</b>
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/nadubrouskaya/">nadubrouskaya</a>
+                </p>
             </div>
-        </header>
-        <main>
-            <section class="personal-info">
-                <div class="title">
-                    <i class="fas fa-user fa-2x"></i>
-                    <h2>Personal Info</h2>
-                </div>
-                <div class="content">
-                    <div class="item">
-                        <p><b>Email</b></p>
-                        <p><a href="mailto:na.dubrouskaya@gmail.com">na.dubrouskaya@gmail.com</a></p>
-                    </div>
-                    <div class="item">
-                        <p><b>Phone</b></p>
-                        <p><a href="tel:+375447660078">+375447660078</a></p>
-                    </div>
-                    <div class="item">
-                        <p><b>Date of birth</b></p>
-                        <p>December 3, 1988</p>
-                    </div>
-                    <div class="item">
-                        <p><b>LinkedIn</b></p>
-                        <p><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/nadubrouskaya/">nadubrouskaya</a></p>
-                    </div>
-                </div>
-            </section>
-            <section class="summary">
-                <div class="title">
-                    <i class="fas fa-sticky-note fa-2x"></i>
-                    <h2>Summary</h2>
-                </div>
-                <div class="content">
-                    <p>Purposeful Software Engineer with practical experience in
-                        development of web front-end applications and UI; oriented on results; excited
-                        about creating user-friendly interface; solid knowledge of OOP; follow style standards;
-                        comfortable with refactoring of existing code; sufficient knowledge in automated testing.</p>
-                </div>
-            </section>
-            <section class="experience">
-                <div class="title">
-                    <i class="fas fa-suitcase fa-2x"></i>
-                    <h2>Experience</h2>
-                </div>
-                <div class="content">
-                    <div class="item dot">
-                        <p class="date">March, 2017 - January, 2018</p>
-                        <h3 class="title">Software Engineer</h3>
-                        <p>EPAM Systems, UX department</p>
-                        <div class="project">
-                            <p>August, 2017 - January, 2018</p>
-                            <p><b>Customer: </b>Johnson's &amp; Johnson's</p>
-                            <p><b>Tasks performed: </b>Enabling new Google AMP themes for multiple brands
-                                (Johnson's Baby, Listerine, Imodium):</p>
+        </section>
+        <section class="cv-section cv-section__about">
+            <h3 class="cv-section_title">About me</h3>
+            <div class="cv-section_content">
+                <p>Purposeful Software Engineer with practical experience in development of web
+                    applications:</p>
+                <ul>
+                    <li>experience in Front-End technologies: React, SCSS, TypeScript;</li>
+                    <li>oriented on results;</li>
+                    <li>excited about creating user-friendly interface;</li>
+                    <li>follow style standards;</li>
+                    <li>comfortable with refactoring of existing code.</li>
+                </ul>
+            </div>
+        </section>
+        <section class="cv-section cv-section__experience">
+            <h3 class="cv-section_title">Experience</h3>
+            <div class="cv-section_content">
+                <ul class="employment-history_list">
+                    <li class="employment-history_item">
+                        <header>
+                            <h4>Software Engineer</h4>
+                            <p><b>SAM Solutions</b></p>
+                            <p class="employment-history_period">February, 2019 - March, 2020</p>
+                        </header>
+                        <section>
+                            <h5>Projects:</h5>
                             <ul>
-                                <li>implement styles for new pages in accordance with sites in production;</li>
-                                <li>activation and styling of new AMP theme and make it similar to mobile version;</li>
-                                <li>bugfixing.</li>
+                                <li>
+                                   <header>
+                                       <p class="employment-history_period">August, 2019 - March, 2020</p>
+                                       <p>Application-constructor to compose projects for information terminals.</p>
+                                   </header>
+                                    <section>
+                                        <h6>Responsibilities:</h6>
+                                        <ul>
+                                            <li>implement and refactor components for composer application;</li>
+                                            <li>maintain and refactor renderer application to show projects correctly
+                                                according to JSON scheme
+                                            </li>
+                                            <li>bugfixing.</li>
+                                        </ul>
+                                    </section>
+                                    <section>
+                                        <h6>Environment and technologies:</h6>
+                                        <ul>
+                                            <li>WebStorm, JIRA, Gitlab;</li>
+                                            <li>ReactJS, MobX, TypeScript, SCSS.</li>
+                                        </ul>
+                                    </section>
+                                </li>
+                                <li>
+                                    <header>
+                                        <p class="employment-history_period">April, 2019 - July, 2019</p>
+                                        <p>Web application that will help users to configure a list of messages and
+                                            contacts: these contact persons will be notified with a configured message if
+                                            the user gives determined voice commands to Alexa speakers. Admin users can see
+                                            statistics of sent messages, create message templates for the main user and add
+                                            news to portal which can be read by Alexa.</p>
+                                    </header>
+                                    <section>
+                                        <h6>Responsibilities:</h6>
+                                        <ul>
+                                            <li>developing of frontend web application (creating app structure, UI
+                                                components, styles)
+                                            </li>
+                                            <li>communicating with backend team and customer</li>
+                                            <li>bugfixing.</li>
+                                        </ul>
+                                    </section>
+                                    <section>
+                                        <h6>Environment and technologies:</h6>
+                                        <ul>
+                                            <li>WebStorm, JIRA, Gitlab;</li>
+                                            <li>ReactJS, Redux Saga, TypeScript, SCSS.</li>
+                                        </ul>
+                                    </section>
+                                </li>
                             </ul>
-                            <p><b>Environment and technologies:</b></p>
+                        </section>
+                    </li>
+                    <li class="employment-history_item">
+                        <header>
+                            <h4>Software Engineer</h4>
+                            <p><b>EPAM Systems</b></p>
+                            <p class="employment-history_period">March, 2017 - January, 2018</p>
+                        </header>
+                        <section>
+                            <h5>Projects:</h5>
                             <ul>
-                                <li>Atom, JIRA, Stash</li>
-                                <li>SCSS, Grunt, CMS Drupal</li>
+                                <li>
+                                   <header>
+                                       <p class="employment-history_period">August, 2017 - January, 2018</p>
+                                       <p>Upgrading brand websites for cosmetics and healthcare brands and enabling new Google
+                                           AMP themes</p>
+                                   </header>
+                                    <section>
+                                        <h6>Responsibilities:</h6>
+                                        <ul>
+                                            <li>implement styles for new pages in accordance with sites in production;</li>
+                                            <li>activation and styling of new AMP theme and make it similar to mobile
+                                                version;
+                                            </li>
+                                            <li>bugfixing.</li>
+                                        </ul>
+                                    </section>
+                                    <section>
+                                        <h6>Environment and technologies:</h6>
+                                        <ul>
+                                            <li>Atom, JIRA, Stash;</li>
+                                            <li>SCSS, Grunt, CMS Drupal.</li>
+                                        </ul>
+                                    </section>
+                                </li>
+                                <li>
+                                    <header>
+                                        <p class="employment-history_period">June, 2017 - July, 2017</p>
+                                        <p>Web application for administrators to add/edit/delete information which is imported
+                                            from database</p>
+                                    </header>
+                                    <section>
+                                        <h6>Responsibilities: </h6>
+                                        <ul>
+                                            <li>implementation of new components;</li>
+                                            <li>refactoring of existing code;</li>
+                                            <li>bugfixing.</li>
+                                        </ul>
+                                    </section>
+                                    <section>
+                                        <h6>Environment and technologies:</h6>
+                                        <ul>
+                                            <li>WebStorm, Gitlab, CRXDE;</li>
+                                            <li>React, Redux, LESS.</li>
+                                        </ul>
+                                    </section>
+                                </li>
+                                <li>
+                                  <header>
+                                      <p class="employment-history_period">March, 2017 - May, 2017</p>
+                                      <p>Project Configuration Wizard for the application which monitors and analyzes how a
+                                          project team performs</p>
+                                  </header>
+                                    <section>
+                                        <h6>Responsibilities:</h6>
+                                        <ul>
+                                            <li>implementation of new components;</li>
+                                            <li>refactoring of existing code;</li>
+                                            <li>bugfixing.</li>
+                                        </ul>
+                                    </section>
+                                    <section>
+                                        <h6>Environment and technologies:</h6>
+                                        <ul>
+                                            <li>WebStorm, Gitlab, JIRA;</li>
+                                            <li>React, Redux, Stylus, Epam UUI.</li>
+                                        </ul>
+                                    </section>
+                                </li>
                             </ul>
-                        </div>
-                        <div class="project">
-                            <p>June, 2017 - July, 2017</p>
-                            <p><b>Customer: </b>SAP</p>
-                            <p><b>Tasks performed: </b>Development an application for administrators to make possible
-                                add/edit/delete tutorials/groups/events, that can be imported to AEM and used on sap.com site
-                                in developer's section:</p>
+                        </section>
+                    </li>
+                    <li class="employment-history_item">
+                        <header>
+                            <h4>Test Automation Engineer</h4>
+                            <p><b>EPAM Systems</b></p>
+                            <p class="employment-history_period">May, 2015 - January, 2017</p>
+                        </header>
+                        <section>
+                            <h5>Projects:</h5>
                             <ul>
-                                <li>implementation of new components;</li>
-                                <li>refactoring of existing code;</li>
-                                <li>bugfixing.</li>
+                                <li>
+                                    <header>
+                                        <p>Application for cloud services and hosting providers</p>
+                                    </header>
+                                    <section>
+                                        <h6>Responsibilities:</h6>
+                                        <ul>
+                                            <li>BDD autotests development and maintenance;</li>
+                                            <li>customer communication;</li>
+                                            <li>bug reporting;</li>
+                                            <li>analysis of tests results.</li>
+                                        </ul>
+                                    </section>
+                                    <section>
+                                        <h6>Environment and technologies:</h6>
+                                        <ul>
+                                            <li>Intellij Idea, Jenkins, Stash, WinSCP, Putty, pgAdmin;</li>
+                                            <li>Java, Maven, Selenium Webdriver, TestNG, JBehave.</li>
+                                        </ul>
+                                    </section>
+                                </li>
                             </ul>
-                            <p><b>Environment and technologies:</b></p>
+                        </section>
+                    </li>
+                    <li class="employment-history_item">
+                        <header>
+                            <h4>Telecommunication Network Design Engineer</h4>
+                            <p><b>ОАО "Гомельгражданпроект"</b></p>
+                            <p class="employment-history_period">August, 2012 - July, 2014</p>
+                        </header>
+                        <section>
                             <ul>
-                                <li>WebStorm, Gitlab, CRXDE</li>
-                                <li>React, Redux, LESS</li>
+                                <li>
+                                    <p>Design of the communication networks in accordance with the technical specifications</p>
+                                </li>
                             </ul>
-                        </div>
-                        <div class="project">
-                            <p>March, 2017 - May, 2017</p>
-                            <p><b>Customer: </b>EPAM Systems</p>
-                            <p><b>Tasks performed: </b>Development of UI form for enabling new projects to PERF board:</p>
-                            <ul>
-                                <li>implementation of new components;</li>
-                                <li>refactoring of existing code;</li>
-                                <li>bugfixing.</li>
-                            </ul>
-                            <p><b>Environment and technologies:</b></p>
-                            <ul>
-                                <li>WebStorm, Gitlab, JIRA</li>
-                                <li>React, Redux, Stylus, Epam UUI</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item dot">
-                        <p class="date">May, 2015 - January, 2017</p>
-                        <h3 class="title">Test Automation Engineer</h3>
-                        <p>EPAM Systems</p>
-                        <div class="project">
-                            <p><b>Customer: </b>Parallels/Odin</p>
-                            <p><b>Tasks performed:</b></p>
-                            <ul>
-                                <li>BDD autotests development and maintenance;</li>
-                                <li>customer communication;</li>
-                                <li>bug reporting;</li>
-                                <li>analysis of tests results.</li>
-                            </ul>
-                            <p><b>Environment and technologies:</b></p>
-                            <ul>
-                                <li>Intellij Idea, Jenkins, Stash, WinSCP, Putty, pgAdmin</li>
-                                <li>Java, Maven, Selenium Webdriver, TestNG, JBehave</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item dot">
-                        <p class="date">August, 2012 - July, 2014</p>
-                        <h3 class="title">Telecommunication Network Design Engineer</h3>
-                        <p>ОАО "Гомельгражданпроект"</p>
-                    </div>
+                        </section>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="cv-section cv-section__education">
+            <h3 class="cv-section_title">Education</h3>
+            <div>
+                <div>
+                    <p>September, 2007 - June, 2012</p>
+                    <h4>Belorussian State University of Transport</h4>
+                    <p><b>Faculty: </b>Electrotechnics</p>
+                    <p><b>Speciality: </b>Automatics, telemechanics and communication on railway transport</p>
                 </div>
-            </section>
-            <section class="education">
-                <div class="title">
-                    <i class="fas fa-graduation-cap fa-2x"></i>
-                    <h2>Education</h2>
-                </div>
-                <div class="content">
-                    <div class="item dot">
-                        <p class="date"><span>September, 2007 - June, 2012</span></p>
-                        <h3 class="title">Belorussian State University of Transport</h3>
-                        <p><b>Faculty: </b>Electrotechnics</p>
-                        <p><b>Speciality: </b>Automatics, telemechanics and communication on railway transport</p>
-                    </div>
-                </div>
-            </section>
-            <section class="skills">
-                <div class="title">
-                    <i class="fas fa-puzzle-piece fa-2x"></i>
-                    <h2>Skills</h2>
-                </div>
-                <div class="content">
-                    <div class="item">
-                        <p><b>Language</b></p>
-                        <p>English - B1</p>
-                    </div>
-                    <div class="item">
-                        <p><b>Technologies</b></p>
-                        <p>HTML</p>
-                        <p>CSS</p>
-                        <p>JavaScript(ES6)</p>
-                        <p>Bootstrap</p>
-                        <p>ReactJS</p>
-                        <p>Redux</p>
-                        <p>NPM</p>
-                        <p>CSS Preprocessing (SCSS, LESS, Stylus)</p>
-                        <p>Git</p>
-                        <p>Gulp, Grunt</p>
-                        <p>Webpack</p>
-                    </div>
-                    <div class="item">
-                        <p><b>IDE</b></p>
-                        <p>WebStorm</p>
-                        <p>Atom</p>
-                        <p>Intellij Idea</p>
-                        <p>Visual Studio Code</p>
-                    </div>
-                    <div class="item">
-                        <p><b>Software development methodologies</b></p>
-                        <p>Agile (Scrum, Kanban)</p>
-                    </div>
-                    <div class="item">
-                        <p><b>OS</b></p>
-                        <p>Windows</p>
-                        <p>Linux</p>
-                    </div>
-                    <div class="item">
-                        <p><b>... and also I am familiar with</b></p>
-                        <p>Stash, Bitbucket, Gitlab, Github</p>
-                        <p>JIRA</p>
-                        <p>Jenkins</p>
-                    </div>
-                </div>
-            </section>
-        </main>
-    </div>
+            </div>
+        </section>
+        <section class="cv-section cv-section__skills">
+            <h3 class="cv-section_title">Skills</h3>
+            <ul>
+                <li>
+                    <p><b>Language</b></p>
+                    <ul>
+                        <li>English - B1</li>
+                    </ul>
+                </li>
+                <li>
+                    <p><b>Technologies</b></p>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript(ES6)</li>
+                        <li>ReactJS</li>
+                        <li>Redux</li>
+                        <li>MobX</li>
+                        <li>TypeScript</li>
+                        <li>Bootstrap</li>
+                        <li>NPM</li>
+                        <li>CSS Preprocessing (SCSS, LESS, Stylus)</li>
+                        <li>Git</li>
+                        <li>Webpack</li>
+                        <li>Gulp</li>
+                    </ul>
+                </li>
+                <li>
+                    <p><b>IDE</b></p>
+                    <ul>
+                        <li>WebStorm</li>
+                        <li>Atom</li>
+                        <li>Visual Studio Code</li>
+                    </ul>
+                </li>
+                <li>
+                    <p><b>Software development methodologies</b></p>
+                    <ul>
+                        <li>Agile (Scrum, Kanban)</li>
+                    </ul>
+                </li>
+                <li>
+                    <p><b>OS</b></p>
+                    <ul>
+                        <li>Windows</li>
+                        <li>Linux</li>
+                    </ul>
+                </li>
+                <li>
+                    <p><b>... and also I am familiar with</b></p>
+                    <ul>
+                        <li>Gitlab, Bitbucket, Github</li>
+                        <li>JIRA</li>
+                        <li>Jenkins</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </main>
+</div>
 </body>
 </html>

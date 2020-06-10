@@ -1,0 +1,95 @@
+@import "fonts";
+@import "variables";
+@import "mixins";
+@import "sections";
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--grey);
+  color: var(--heavy-metal);
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  padding-left: 1.5em;
+}
+
+a {
+  text-decoration: none;
+  color: var(--heavy-metal);
+}
+
+main {
+  display: block;
+}
+
+.cv {
+  min-width: 300px;
+  max-width: 1200px;
+  box-shadow: 0 0 10px var(--dark-grey);
+  background-color: var(--white-snow);
+
+  @include tablet {
+    margin: 20px;
+  }
+
+  @include screen__medium {
+    margin: 20px auto;
+  }
+}
+
+.cv-content {
+  padding: var(--gap);
+  background-image: linear-gradient(to right, var(--white-butterfly) var(--background-width), var(--white-snow) var(--background-width));
+}
+
+
+/*--------------------------------------------------------------
+CSS Grid layout for wider screens, when browser supports grid:
+--------------------------------------------------------------*/
+
+@supports (display: grid) {
+  @include screen__small {
+    .cv-content {
+      --gap: 40px;
+      --first-col-width: 30%;
+      --background-width: calc(var(--first-col-width) + var(--gap));
+
+      display: grid;
+      grid-gap: var(--gap);
+      grid-template-columns: var(--first-col-width) minmax(0, 1fr);
+      grid-template-areas: "name name"
+                          "job-title job-title"
+                          "personal-info about"
+                          "education experience"
+                          "skills experience"
+                          ". experience";
+    }
+  }
+}
+
+@media print {
+  html {
+    font-size: 12px;
+  }
+
+  .cv {
+    margin: 0 auto;
+    box-shadow: none;
+  }
+  
+  * {
+    -webkit-print-color-adjust: exact !important; /*Chrome, Safari */
+    color-adjust: exact !important;  /*Firefox*/
+  }
+
+}
